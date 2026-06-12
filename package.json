@@ -23,7 +23,7 @@
     "astro": "^5.18.2",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.4",
-    "dayjs": "^1.11.13",
+    "dayjs": "^1.11.21",
     "giscus": "^1.6.0",
     "markdown-it": "^14.1.0",
     "rehype-katex": "^7.0.1",
