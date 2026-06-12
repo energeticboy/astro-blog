@@ -1,12 +1,11 @@
 {
-  "name": "astro-theme-typography",
+  "name": "astro-blog",
   "type": "module",
   "version": "0.1.0",
-  "packageManager": "pnpm@10.13.1",
-  "description": "A typography theme for Astro, inspired by the design of the original Typography theme.",
-  "author": "Moeyua <mail@moeyua.com> (https://github.com/moeyua/)",
+  "description": "My personal blog built with Astro.",
+  "author": "Lbeal <898599301@qq.com>",
   "license": "MIT",
-  "repository": "https://github.com/moeyua/astro-theme-typography",
+  "repository": "https://github.com/energeticboy/astro-blog",
   "scripts": {
     "dev": "astro check && astro dev",
     "build": "astro check && astro build",
