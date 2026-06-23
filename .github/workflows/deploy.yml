@@ -40,7 +40,7 @@ jobs:
           source: "dist/*"
           target: "/var/www/blog"
           strip_components: 1
-          rm: true
+          #rm: true
 
       # ⑥ 完成通知（可选）
       - name: ✅ Deploy Success
