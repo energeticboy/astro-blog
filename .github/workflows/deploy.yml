@@ -3,7 +3,7 @@ name: 🚀 Deploy Astro Blog
 on:
   push:
     branches:
-      - main  # 推送到 main 分支时自动触发
+      - main
 
 jobs:
   deploy:
@@ -11,15 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ① 拉取代码
+      # ① 拉取代码 - 更新到最新版本
       - name: 📦 Checkout
         uses: actions/checkout@v4
 
-      # ② 安装 Node.js 环境
+      # ② 安装 Node.js 环境 - 使用最新的 Node.js LTS 版本
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'  # 改为 22（最新 LTS）
           cache: 'npm'
 
       # ③ 安装项目依赖
@@ -29,7 +29,6 @@ jobs:
       # ④ 构建 Astro 项目
       - name: 🔨 Build Astro
         run: npm run build
-        # 构建产物默认输出到 ./dist 目录
 
       # ⑤ 上传构建产物到服务器
       - name: 📤 Upload to Server
@@ -38,10 +37,10 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          source: "dist/*"           # Astro 构建输出目录
-          target: "/var/www/blog"    # 服务器网站目录
-          strip_components: 1        # 去掉 dist/ 层级，直接上传内容
-          rm: true                   # 上传前清空旧文件，避免残留
+          source: "dist/*"
+          target: "/var/www/blog"
+          strip_components: 1
+          rm: true
 
       # ⑥ 完成通知（可选）
       - name: ✅ Deploy Success
